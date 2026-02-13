@@ -1,19 +1,20 @@
 # Big-B-Router
-Ipynb to edit out ALPR exposed roads from PBF files. This can then be converted into an OBF file for use in OsmAnd.  
+Ipynb to edit out ALPR exposed roads from PBF files. This can then be converted into an OBF file for use in [OsmAnd](https://osmand.net/).  
 
 ## Finished OBF file demo
 [bigbrouter.webm](https://github.com/user-attachments/assets/e8a99d25-e6ed-437e-9b82-5e7b6aa1a721)  
 
 
-OsmAnd is available for iOS as well, although I have not tested
+OsmAnd is available for iOS as well, although I have not tested. 
 
-## Prerequisites  
+## Requirements  
 ### cli tool:  
 - [osmium-tool](https://osmcode.org/osmium-tool/)
   -   [AUR link](https://aur.archlinux.org/packages/osmium-tool)
 
 ### python environment:  
-- jupyter-notebooks  
+- jupyter-notebooks
+- ipyleaflet  
 - geopandas  
 - pyrosm  
 - pyosmium  
