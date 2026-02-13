@@ -20,7 +20,7 @@ OsmAnd is available for iOS as well, although I have not tested.
 - pyosmium  
 
 ## Usage  
-After downloading the prerequisites,  
+After downloading the Requirements,  
 - Download pbf map data of the state from [geofabrik](https://download.geofabrik.de/) or from [other providers](https://wiki.openstreetmap.org/wiki/Planet.osm#Extracts)  
 - Prep the pbf data with the pbf-prep.ipynb  
 - Process the data with big-b-router.ipynb  
