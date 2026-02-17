@@ -14,8 +14,8 @@ OsmAnd is available for iOS as well, although I have not tested.
 
 ### python environment:  
 - jupyter-notebooks
-- ipyleaflet  
 - geopandas  
+- folium  
 - pyrosm  
 - pyosmium  
 
