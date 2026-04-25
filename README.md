@@ -28,18 +28,26 @@ After downloading the Requirements,
 - Process the data with big-b-router.ipynb  
 - Plug in the output to OsmAndMapCreator  
 - Transfer OBF file to phone and import with OsmAnd  
-
-### Potential improvement ideas  
-- Mark roads as either [ice roads, 4WD roads, or low emission zones]; then the anti-ALPR routing could be toggled in OsmAnd route parameter settings to avoid or not avoid the road type (ie. on/off switch for ALPR avoidance).  
-  - low emission zones are ways that define an outer boundary  
-    - write all roads and let osmand handle LEZ's? (No low emission zones in the US that I could find)   
-    - easier option? Looked at an LEZ in osm and did not see any nodes on road intersections. (no need to include nodes at intersections?)  
-    - relation w/ boundary="low_emission_zone" write geoseries.exterior of alprtrap geometries as the member way of each LEZ to output file?
-    - https://www.openstreetmap.org/relation/19100581#map=14/52.07998/4.30844      
-  - ice roads, 4wd roads as highway tags ice_road, ford, winter_road?;  
-    - write roads with tags, longer roads that are split would go about the same process, but with tags on the cropped section (use overlay how=intersection geometry in addition to difference?)  
-- Add the ability to add obstacles that would be defined in the routing.xml to add x amount of time. The idea being that you would shrink the cone to remove roads, and have a larger area that would be disadvantaged by the "obstacle". Typically a close road would pick up the LP (license plate), but a further road may be perpendicular, which may pickup vehicle metadata which you would prefer to avoid (through time penalties), but not remove.  
   
+---
+### Updates  
+(Failed) Attempts at trying to simplify the process / separate it from road data (Trying to make it easier to use and to make files easier/smaller for distribution)  
+
+Method| Separate File from Map| Merge w/ map -> osmandmapcreator |  
+---|---|---|
+Low Emission Zones|❌|🟠<sup>1</sup>|    
+Barrier<sup>2</sup> Gates / Wall / Access=no|❌|❌|  
+Barrier<sup>3</sup> Border Control|❌|❌|  
+
+1. Converting to Obf seems to add data to the nodes that are contained within low emission zones. Then avoiding LEZ's would prevent crossing said nodes. The problem is that a projection may cross the way, but not a node (fairly common| roads have a tendency to be straight lines \**surprised pikachu*\*). So a different projection needs to be used, but I'm unsure if it's possible to do without interfering with the nodes in adjacent roads.  
+2. Barriers although non functional for routing could be an easy way to overlay alpr location data on the map in osmand.
+3. Barrier nodes are referenced by the way they sit on, it may be possible to integrate through a changeset.
+---  
+### Future Ideas:  
+* Figure out a way to imitate the "Avoid Roads" feature in osmand to programmatically generate roads to avoid.  
+* Create procedure for comaps (seems possible to import custom maps *untested)  
+* Method: Changeset of all roads that is then applied to a map -> osmandmapcreator (no clue how to do changesets :b)  
+
 ---
 #### Credits  
 * Impossible without OpenStreetMap data & contributors  
