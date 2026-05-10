@@ -15,12 +15,14 @@ OsmAnd is available for iOS as well, although I have not tested.
   -   [AUR link](https://aur.archlinux.org/packages/osmium-tool)  
 
 ### python environment:  
-- jupyter-notebooks  
-- geopandas
+- notebook  
+- geopandas  
 - folium  
-- pyrosm
-- pandas (<3.0)
+- pyrosm  
 - pyosmium  
+- ipyleaflet  
+
+Tested with `conda create -n gis-py312 -c conda-forge geopandas folium pyrosm pyosmium notebook ipyleaflet`  
 
 ## Usage  
 After downloading the Requirements,  
