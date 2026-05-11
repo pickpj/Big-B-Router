@@ -13,7 +13,8 @@ OsmAnd is available for iOS as well, although I have not tested.
 ### cli tool:  
 - [osmium-tool](https://osmcode.org/osmium-tool/)  
   -   [AUR link](https://aur.archlinux.org/packages/osmium-tool)  
-
+  -   [conda forge](https://anaconda.org/conda-forge/osmium-tool)  
+  
 ### python environment:  
 - notebook  
 - geopandas  
@@ -22,7 +23,7 @@ OsmAnd is available for iOS as well, although I have not tested.
 - pyosmium  
 - ipyleaflet  
 
-Tested with `conda create -n gis-py312 -c conda-forge geopandas folium pyrosm pyosmium notebook ipyleaflet`  
+Tested with `conda create -n gis-py312 -c conda-forge geopandas folium pyrosm pyosmium notebook ipyleaflet osmium-tool`  
 
 ## Usage  
 After downloading the Requirements,  
@@ -42,14 +43,13 @@ Low Emission Zones|❌|🟠<sup>1</sup>|
 Barrier<sup>2</sup> Gates / Wall / Access=no|❌|❌|  
 Barrier<sup>3</sup> Border Control|❌|❌|  
 
-1. Converting to Obf seems to add data to the nodes that are contained within low emission zones. Then avoiding LEZ's would prevent crossing said nodes. The problem is that a projection may cross the way, but not a node (fairly common| roads have a tendency to be straight lines \**surprised pikachu*\*). So a different projection needs to be used, but I'm unsure if it's possible to do without interfering with the nodes in adjacent roads.  
+1. Converting to Obf seems to add data to the nodes that are contained within low emission zones. Then avoiding LEZ's would prevent crossing said nodes. The problem is that a projection may cross the way, but not a node (fairly common| roads have a tendency to be straight lines). So a different projection needs to be used, but I'm unsure if it's possible to do without interfering with the nodes in adjacent roads.  
 2. Barriers although non functional for routing could be an easy way to overlay alpr location data on the map in osmand.
 3. Barrier nodes are referenced by the way they sit on, it may be possible to integrate through a changeset.
 ---  
 ### Future Ideas:  
-* Figure out a way to imitate the "Avoid Roads" feature in osmand to programmatically generate roads to avoid.  
-* Create procedure for comaps (seems possible to import custom maps *untested)  
-* Method: Changeset of all roads that is then applied to a map -> osmandmapcreator (no clue how to do changesets :b)  
+* Create procedure for comaps (seems possible to import custom maps)  
+* Method: Changeset of all roads that is then applied to a map -> osmandmapcreator  
 
 ---
 #### Credits  
