@@ -1,27 +1,23 @@
-# Big-B-Router  
+# Big-B-Comaps  
 ### Offline Anti-ALPR routing and navigation for your phone.  
 
-Ipynb to edit out ALPR exposed roads from PBF files. This can then be converted into an OBF file for use in [OsmAnd](https://osmand.net/).  
-
-<img width="1648" height="762" alt="nav-example" src="https://github.com/user-attachments/assets/97df2186-bf89-4486-8e3d-cd605379f668" />  
-
-## Finished OBF file demo  
-
-[bigbrouter.webm](https://github.com/user-attachments/assets/72dcea2c-5c7c-4822-8a2c-ff9c2b7ca1ca)  
-
+Ipynb to edit out ALPR exposed roads from PBF files. This can then be converted into an mwm file for use in [Comaps](https://www.comaps.app/).  
+Compared to the Osmand example Comaps has Android Auto support for free.
+The tradeoff is that this is a fair bit more complicated to set up than the Osmand example.  
+Also the generated map differs slightly from the map generated for osmand, but should function similarly.  
   
-OsmAnd is available for iOS as well, although I have not tested.  
+If you want Android Auto for Osmand your option are to either: pay ~80$ for lifetime subscription to osmand+, ~8$/yr for maps+, or with a rooted android device figure out how to get osmand* from F-Droid to work with Android Auto.  
+  
 
 ## Usage  
-I wrote a step by step guide showing the whole process. [Link here](https://pickpj.github.io/Mapping/FIock/bigbrouter.html)  
   
-TLDR:
 - Download Requirements (env), pbf map data from [geofabrik](https://download.geofabrik.de/) or [other providers](https://wiki.openstreetmap.org/wiki/Planet.osm#Extracts)  
 - Prep the pbf data with the pbf-prep.ipynb  
-- Process the data with big-b-router.ipynb  
-- Plug in the output to OsmAndMapCreator  
-- Transfer OBF file to phone and import with OsmAnd  
-  
+- Process the data with big-b-comaps.ipynb  
+
+- Generate mwm through the comaps repo (hard).  
+
+
 ## Requirements  
 Tested with `conda create -n gis-py312 -c conda-forge geopandas folium pyrosm pyosmium notebook ipyleaflet osmium-tool`  
 ### cli tool:  
@@ -36,23 +32,6 @@ Tested with `conda create -n gis-py312 -c conda-forge geopandas folium pyrosm py
 - pyosmium  
 - ipyleaflet  
 
----
-### Updates  
-(Failed) Attempts at trying to simplify the process / separate it from road data (Trying to make it easier to use and to make files easier/smaller for distribution)  
-
-Method| Separate File from Map| Merge w/ map -> osmandmapcreator |  
----|---|---|
-Low Emission Zones|❌|🟠<sup>1</sup>|    
-Barrier<sup>2</sup> Gates / Wall / Access=no|❌|❌|  
-Barrier<sup>3</sup> Border Control|❌|❌|  
-
-1. Converting to Obf seems to add data to the nodes that are contained within low emission zones. Then avoiding LEZ's would prevent crossing said nodes. The problem is that a projection may cross the way, but not a node (fairly common| roads have a tendency to be straight lines). So a different projection needs to be used, but I'm unsure if it's possible to do without interfering with the nodes in adjacent roads.  
-2. Barriers although non functional for routing could be an easy way to overlay alpr location data on the map in osmand.
-3. Barrier nodes are referenced by the way they sit on, it may be possible to integrate through a changeset.
----  
-### Future Ideas:  
-* Create procedure for comaps (seems possible to import custom maps)  
-* Method: Changeset of all roads that is then applied to a map -> osmandmapcreator  
 
 ---
 #### Credits  
