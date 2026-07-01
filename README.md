@@ -37,22 +37,30 @@ Tested with `conda create -n gis-py312 -c conda-forge geopandas folium pyrosm py
 - ipyleaflet  
 
 ---
-### Updates  
-(Failed) Attempts at trying to simplify the process / separate it from road data (Trying to make it easier to use and to make files easier/smaller for distribution)  
+### Updates 
+I got maps working in Comaps, so its time to compare all the options.  
+My recommendation is either:  
+  
+Osmand~ from F-Droid and mounting the phone (Osmand~ has extra features compared to the G-Play version)  
+or   
+The paid Osmand+ (G-Play) option if you need/want Android Auto  
+  
+Comparison matrix:  
+Application [🟢Rec]| Free?| Navigation/Re-routing | Works offline | Android Auto| Easy?|   
+---|---|---|---|---|---|  
+Osmand (G-Play)|✅|✅|✅|❌|✅|  
+🟢Osmand+ (G-Play)|❌<sup>1</sup>|✅|✅|✅|✅|  
+🟢Osmand~ (F-Droid)|✅|✅|✅|🟠<sup>2</sup>|✅|  
+Comaps (G-Play)|✅|✅|✅|✅|❌<sup>3</sup>|  
+Comaps (F-Droid)|✅|✅|✅|🟠<sup>2</sup>|❌<sup>3</sup>|  
 
-Method| Separate File from Map| Merge w/ map -> osmandmapcreator |  
----|---|---|
-Low Emission Zones|❌|🟠<sup>1</sup>|    
-Barrier<sup>2</sup> Gates / Wall / Access=no|❌|❌|  
-Barrier<sup>3</sup> Border Control|❌|❌|  
+1. Osmand+ (Maps+) costs ~15$/year or 70$/once, giving AA/Carplay access (sometimes goes on sale)  
+2. Have not done this, but it seems like it is possible to enable AA by pretending/faking the app is installed through G-Play. You most likely need a rooted device to use Kinginstaller   
+3. Comaps uses a different mapgen in the comaps branch. Getting the [comaps repo](https://codeberg.org/comaps/comaps) setup for map conversion is difficult, but I have some tips that might help [link not here yet]  
 
-1. Converting to Obf seems to add data to the nodes that are contained within low emission zones. Then avoiding LEZ's would prevent crossing said nodes. The problem is that a projection may cross the way, but not a node (fairly common| roads have a tendency to be straight lines). So a different projection needs to be used, but I'm unsure if it's possible to do without interfering with the nodes in adjacent roads.  
-2. Barriers although non functional for routing could be an easy way to overlay alpr location data on the map in osmand.
-3. Barrier nodes are referenced by the way they sit on, it may be possible to integrate through a changeset.
 ---  
 ### Future Ideas:  
-* Create procedure for comaps (seems possible to import custom maps)  
-* Method: Changeset of all roads that is then applied to a map -> osmandmapcreator  
+* Working on getting the mapgen to work with routing.xml files for weighted routing. The weights would also be togglable and adjustable within the driving profile. (this would only be for osmand)  
 
 ---
 #### Credits  
