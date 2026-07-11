@@ -15,8 +15,9 @@ If you want Android Auto for Osmand your option are to either: pay ~80$ for life
 - Prep the pbf data with the pbf-prep.ipynb  
 - Process the data with big-b-comaps.ipynb  
 
-- Generate mwm through the comaps repo (hard).  
-
+I wrote up some [Tips / how-to](https://pickpj.github.io/Mapping/custom-routing-maps/comaps.html) which should help for the next part. (Just my observations from having gone through the process once) 
+- Generate mwm through the comaps repo.  
+- Put files into app data, probably needs to be done through PC  
 
 ## Requirements  
 Tested with `conda create -n gis-py312 -c conda-forge geopandas folium pyrosm pyosmium notebook ipyleaflet osmium-tool`  
@@ -37,7 +38,7 @@ Tested with `conda create -n gis-py312 -c conda-forge geopandas folium pyrosm py
 #### Credits  
 * Impossible without OpenStreetMap data & contributors  
 * pyosmium / osmium - nothing else worked for editing osm data and keeping/returning it as a pbf  
-* OsmAnd and OsmAndMapCreator  
+* Comaps  
 * pyrosm for reading pbfs to geopandas  
 ---  
 
