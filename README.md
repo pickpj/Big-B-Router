@@ -8,7 +8,8 @@ Also the generated map differs slightly from the map generated for osmand, but s
   
 If you want Android Auto for Osmand your option are to either: pay ~80$ for lifetime subscription to osmand+, ~8$/yr for maps+, or with a rooted android device figure out how to get osmand* from F-Droid to work with Android Auto.  
   
-
+P.S. If you're looking for carplay support, you will likely not find it here as I have no clue how you would transfer the generated map data into the apps data. 
+  
 ## Usage  
   
 - Download Requirements (env), pbf map data from [geofabrik](https://download.geofabrik.de/) or [other providers](https://wiki.openstreetmap.org/wiki/Planet.osm#Extracts)  
