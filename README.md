@@ -3,6 +3,8 @@
 
 Ipynb to edit out ALPR exposed roads from PBF files. This can then be converted into an OBF file for use in [OsmAnd](https://osmand.net/).  
 
+There is also the [Comaps branch](https://github.com/pickpj/Big-B-Router/tree/comaps) for producing a pbf file that works with [Comaps](https://www.comaps.app/) ([repo](https://codeberg.org/comaps/comaps)). Also some tips to get the pbf converted to an mwm and working [here](https://pickpj.github.io/Mapping/custom-routing-maps/comaps.html).  
+
 <img width="1648" height="762" alt="nav-example" src="https://github.com/user-attachments/assets/97df2186-bf89-4486-8e3d-cd605379f668" />  
 
 ## Finished OBF file demo  
@@ -10,7 +12,7 @@ Ipynb to edit out ALPR exposed roads from PBF files. This can then be converted 
 [bigbrouter.webm](https://github.com/user-attachments/assets/72dcea2c-5c7c-4822-8a2c-ff9c2b7ca1ca)  
 
   
-OsmAnd is available for iOS as well, although I have not tested.  
+OsmAnd is available for iOS as well, although I have not tested.    
 
 ## Usage  
 I wrote a step by step guide showing the whole process. [Link here](https://pickpj.github.io/Mapping/FIock/bigbrouter.html)  
@@ -23,7 +25,9 @@ TLDR:
 - Transfer OBF file to phone and import with OsmAnd  
   
 ## Requirements  
-Tested with `conda create -n gis-py312 -c conda-forge geopandas folium pyrosm pyosmium notebook ipyleaflet osmium-tool`  
+Tested with:  
+`conda create -n gis-py312 -c conda-forge geopandas folium pyrosm pyosmium notebook ipyleaflet osmium-tool`  
+
 ### cli tool:  
 - [osmium-tool](https://osmcode.org/osmium-tool/)  
   -   [AUR link](https://aur.archlinux.org/packages/osmium-tool)  
@@ -37,31 +41,29 @@ Tested with `conda create -n gis-py312 -c conda-forge geopandas folium pyrosm py
 - ipyleaflet  
 
 ---
-### Updates 
-I got maps working in Comaps, so its time to compare all the options.  
-My recommendation is either:  
-  
-Osmand~ from F-Droid and mounting the phone (Osmand~ has extra features compared to the G-Play version)  
-or   
-The paid Osmand+ (G-Play) option if you need/want Android Auto  
-  
+### My recommendation for what app to use:  
+
+1. The paid Osmand+ (G-Play) option if you need/want Android Auto  
+2. Osmand~ from F-Droid and mounting the phone (Osmand~ has extra features compared to the G-Play version)  
+3. Lastly, if you really want Android Auto AND do not want to pay, I would recommend Comaps (G-Play). Although, I should warn that the setup process for comaps is harder and the routing can be suboptimal.  
+
 Comparison matrix:  
 Application [🟢Rec]| Free?| Navigation/Re-routing | Works offline | Android Auto| Easy?|   
 ---|---|---|---|---|---|  
 Osmand (G-Play)|✅|✅|✅|❌|✅|  
 🟢Osmand+ (G-Play)|❌<sup>1</sup>|✅|✅|✅|✅|  
-🟢Osmand~ (F-Droid)|✅|✅|✅|🟠<sup>2</sup>|✅|  
-Comaps (G-Play)|✅|✅|✅|✅|❌<sup>3</sup>|  
-Comaps (F-Droid)|✅|✅|✅|🟠<sup>2</sup>|❌<sup>3</sup>|  
+🟢Osmand~ (F-Droid)|✅|✅|✅|➖<sup>2</sup>|✅|  
+🟡Comaps (G-Play)|✅|✅|✅|✅|❌<sup>3</sup>|  
+Comaps (F-Droid)|✅|✅|✅|➖<sup>2</sup>|❌<sup>3</sup>|  
 
 1. Osmand+ (Maps+) costs ~15$/year or 70$/once, giving AA/Carplay access (sometimes goes on sale)  
-2. Have not done this, but it seems like it is possible to enable AA by pretending/faking the app is installed through G-Play. You most likely need a rooted device to use Kinginstaller   
-3. Comaps uses a different mapgen in the comaps branch. Getting the [comaps repo](https://codeberg.org/comaps/comaps) setup for map conversion is difficult, but I have some tips that might help [link not here yet]  
+2. It seems like it is possible to enable AA by pretending/faking the app is installed through G-Play. You will likely need a rooted device with Gapps, and to use Kinginstaller. If "rooted" or "Gapps" doesn't make sense to you, then I would advise against doing this.   
+3. Comaps uses a different mapgen, which is in the [comaps branch](https://github.com/pickpj/Big-B-Router/tree/comaps). Getting the [comaps repo](https://codeberg.org/comaps/comaps) setup for map conversion is difficult, but I have [some helpful advice](https://pickpj.github.io/Mapping/custom-routing-maps/comaps.html)  
 
 ---  
 ### Future Ideas:  
-* Working on getting the mapgen to work with routing.xml files for weighted routing. The weights would also be togglable and adjustable within the driving profile. (this would only be for osmand)  
-
+* Continuing on improving mapgen for weighted routing. The weights are togglable and adjustable with custom driving profiles (routing.xml files). (this would only be for osmand)  
+* ***Maybe*** scaling up mapgen and distributing map files
 ---
 #### Credits  
 * Impossible without OpenStreetMap data & contributors  
