@@ -1,9 +1,9 @@
-# Big-B-Router  
+# big-b-router  
 ### Offline Anti-ALPR routing and navigation for your phone.  
 
 Ipynb to edit out ALPR exposed roads from PBF files. This can then be converted into an OBF file for use in [OsmAnd](https://osmand.net/).  
 
-There is also the [Comaps branch](https://github.com/pickpj/Big-B-Router/tree/comaps) for producing a pbf file that works with [Comaps](https://www.comaps.app/) ([repo](https://codeberg.org/comaps/comaps)). Also some tips to get the pbf converted to an mwm and working [here](https://pickpj.github.io/Mapping/custom-routing-maps/comaps.html).  
+There is also the [Comaps branch](https://github.com/pickpj/big-b-router/tree/comaps) for producing a pbf file that works with [Comaps](https://www.comaps.app/) ([repo](https://codeberg.org/comaps/comaps)). Also some tips to get the pbf converted to an mwm and working [here](https://pickpj.github.io/Mapping/custom-routing-maps/comaps.html).  
 
 <img width="1648" height="762" alt="nav-example" src="https://github.com/user-attachments/assets/97df2186-bf89-4486-8e3d-cd605379f668" />  
 
@@ -58,7 +58,7 @@ Comaps (F-Droid)|✅|✅|✅|➖<sup>2</sup>|❌<sup>3</sup>|
 
 1. Osmand+ (Maps+) costs ~15$/year or 70$/once, giving AA/Carplay access (sometimes goes on sale)  
 2. It seems like it is possible to enable AA by pretending/faking the app is installed through G-Play. You will likely need a rooted device with Gapps, and to use Kinginstaller. If "rooted" or "Gapps" doesn't make sense to you, then I would advise against doing this.   
-3. Comaps uses a different mapgen, which is in the [comaps branch](https://github.com/pickpj/Big-B-Router/tree/comaps). Getting the [comaps repo](https://codeberg.org/comaps/comaps) setup for map conversion is difficult, but I have [some helpful advice](https://pickpj.github.io/Mapping/custom-routing-maps/comaps.html)  
+3. Comaps uses a different mapgen, which is in the [comaps branch](https://github.com/pickpj/big-b-router/tree/comaps). Getting the [comaps repo](https://codeberg.org/comaps/comaps) setup for map conversion is difficult, but I have [some helpful advice](https://pickpj.github.io/Mapping/custom-routing-maps/comaps.html)  
 
 ---  
 ### Future Ideas:  
