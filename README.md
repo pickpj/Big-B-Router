@@ -3,16 +3,20 @@
 
 Ipynb to edit out ALPR exposed roads from PBF files. This can then be converted into an OBF file for use in [OsmAnd](https://osmand.net/).  
 
-There is also the [Comaps branch](https://github.com/pickpj/big-b-router/tree/comaps) for producing a pbf file that works with [Comaps](https://www.comaps.app/) ([repo](https://codeberg.org/comaps/comaps)). Also some tips to get the pbf converted to an mwm and working [here](https://pickpj.github.io/Mapping/custom-routing-maps/comaps.html).  
-
 <img width="1648" height="762" alt="nav-example" src="https://github.com/user-attachments/assets/97df2186-bf89-4486-8e3d-cd605379f668" />  
+
+---  
+
+Other variations:  
+⭐ For those that want weighted routing with penalties. There is now [bbr-weights](https://github.com/pickpj/bbr-weights)  
+⭐ There is also the [Comaps branch](https://github.com/pickpj/big-b-router/tree/comaps) for producing a pbf file that works with [Comaps](https://www.comaps.app/) ([repo](https://codeberg.org/comaps/comaps)). Also some tips to get the pbf converted to an mwm and working [here](https://pickpj.github.io/Mapping/custom-routing-maps/comaps.html). It should also work with Organic Maps due to the similarities with Comaps.  
+OsmAnd is available for iOS as well, although I have not tested.    
+
 
 ## Finished OBF file demo  
 
 [bigbrouter.webm](https://github.com/user-attachments/assets/72dcea2c-5c7c-4822-8a2c-ff9c2b7ca1ca)  
 
-  
-OsmAnd is available for iOS as well, although I have not tested.    
 
 ## Usage  
 I wrote a step by step guide showing the whole process. [Link here](https://pickpj.github.io/Mapping/FIock/bigbrouter.html)  
@@ -62,7 +66,6 @@ Comaps (F-Droid)|✅|✅|✅|➖<sup>2</sup>|❌<sup>3</sup>|
 
 ---  
 ### Future Ideas:  
-* Continuing on improving mapgen for weighted routing. The weights are togglable and adjustable with custom driving profiles (routing.xml files). (this would only be for osmand)  
 * ***Maybe*** scaling up mapgen and distributing map files
 ---
 #### Credits  
