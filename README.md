@@ -22,7 +22,7 @@ OsmAnd is available for iOS as well, although I have not tested.
 I wrote a step by step guide showing the whole process. [Link here](https://pickpj.github.io/Mapping/FIock/bigbrouter.html)  
   
 TLDR:
-- Download Requirements (env), pbf map data from [geofabrik](https://download.geofabrik.de/) or [other providers](https://wiki.openstreetmap.org/wiki/Planet.osm#Extracts)  
+- Download env Requirements. Download pbf map data from [geofabrik](https://download.geofabrik.de/) or [other providers](https://wiki.openstreetmap.org/wiki/Planet.osm#Extracts)  
 - Prep the pbf data with the pbf-prep.ipynb  
 - Process the data with big-b-router.ipynb  
 - Plug in the output to OsmAndMapCreator  
@@ -41,7 +41,7 @@ Tested with:
 - geopandas  
 - folium  
 - pyrosm  
-- pyosmium  
+- pyosmium/osmium (pyosmium in conda-forge, but osmium in pypi ; very confusing)  
 - ipyleaflet  
 
 ---
